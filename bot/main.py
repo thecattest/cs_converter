@@ -1,3 +1,6 @@
+import sys
+sys.path.append("..")
+
 from converter import convert
 
 import telegram
@@ -17,7 +20,7 @@ def start(update, context):
 
 def help(update, context):
     update.message.reply_text("Отправь сообщение формата\n"
-                              "<Число> <Исходная СИ> <Целевая СИ>\т"
+                              "<Число> <Исходная СИ> <Целевая СИ>\n"
                               "и получи результат")
 
 
@@ -35,12 +38,16 @@ def convert_from_message(update, context):
             raise ValueError("СИ должна быть натуральным числом")
         else:
             result = convert(n, base, target)
-            answer = ''
-            for n in range(0, len(result), 3):
-                answer += ''.join(list(list(result)[n:n + 3])) + ' '
-            answer = answer[::-1]
+            if len(result) > 5:
+                answer = ''
+                for n in range(0, len(result), 3):
+                    answer += ''.join(list(list(result)[n:n + 3])) + ' '
+                # answer = answer[::-1]
+            else:
+                answer = result
     except Exception as e:
         update.message.reply_text(f'Ошибка: {e}')
+        help(update, context)
     else:
         update.message.reply_text(answer)
 
@@ -53,6 +60,7 @@ def main():
     dp.add_handler(CommandHandler('help', help))
     dp.add_handler(CommandHandler('stop', stop))
     dp.add_handler(MessageHandler(Filters.regex(r'(\d+\s+){2}\d+'), convert_from_message))
+    dp.add_handler(MessageHandler(Filters.text, help))
 
     try:
         updater.start_polling()
