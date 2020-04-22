@@ -15,13 +15,15 @@ except ImportError:
 
 def start(update, context):
     update.message.reply_text("Привет! Конвертирую числа из любых систем исчисления в любые.\n"
-                              "Для справки отправь /help")
+                              "Для справки отправь /help\n")
 
 
 def help(update, context):
     update.message.reply_text("Отправь сообщение формата\n"
                               "<Число> <Исходная СИ> <Целевая СИ>\n"
-                              "и получи результат")
+                              "и получи результат\n\n"
+                              "Автор: @thecattest\n"
+                              "Source: github.com/ilya-vodopyanov/sc_converter")
 
 
 def stop(update, context):
