@@ -38,5 +38,7 @@ def convert(n, base, target):
     if base > 36 or target > 36:
         raise ValueError('СИ не может превышать 36')
     tenth = to_tenth(n, base)
-    res = from_tenth(tenth, target)
+    res = str(from_tenth(tenth, target))
+    if res[0] == '0':
+        res = res[1:]
     return res
