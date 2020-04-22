@@ -65,7 +65,7 @@ def main():
     dp.add_handler(CommandHandler('help', help))
     dp.add_handler(CommandHandler('stop', stop))
     dp.add_handler(CommandHandler('credits', credits))
-    dp.add_handler(MessageHandler(Filters.regex(r'(\d+\s+){2}\d+'), convert_from_message))
+    dp.add_handler(MessageHandler(Filters.regex(r'[\da-zA-z]+\s+\d+\s+\d+'), convert_from_message))
     dp.add_handler(MessageHandler(Filters.text, help))
 
     try:
