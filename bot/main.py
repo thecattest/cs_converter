@@ -23,7 +23,7 @@ def help(update, context):
                               "<Число> <Исходная СИ> <Целевая СИ>\n"
                               "и получи результат\n\n"
                               "Автор: @thecattest\n"
-                              "Source: github.com/ilya-vodopyanov/sc_converter")
+                              "Source: github.com/ilya-vodopyanov/cs_converter")
 
 
 def stop(update, context):
