@@ -21,8 +21,11 @@ def start(update, context):
 def help(update, context):
     update.message.reply_text("Отправь сообщение формата\n"
                               "<Число> <Исходная СИ> <Целевая СИ>\n"
-                              "и получи результат\n\n"
-                              "Автор: @thecattest\n"
+                              "и получи результат")
+
+
+def credits(update, context):
+    update.message.reply_text("Автор: @thecattest\n"
                               "Source: github.com/ilya-vodopyanov/cs_converter")
 
 
@@ -61,6 +64,7 @@ def main():
     dp.add_handler(CommandHandler('start', start))
     dp.add_handler(CommandHandler('help', help))
     dp.add_handler(CommandHandler('stop', stop))
+    dp.add_handler(CommandHandler('credits', credits))
     dp.add_handler(MessageHandler(Filters.regex(r'(\d+\s+){2}\d+'), convert_from_message))
     dp.add_handler(MessageHandler(Filters.text, help))
 
