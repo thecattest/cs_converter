@@ -20,7 +20,7 @@ def to_tenth(n, base):
 
 
 def from_tenth(n, base):
-    if n >= base:
+    if n >= base or n > 9:
         res = ''
         while n > 1:
             left = n % base
