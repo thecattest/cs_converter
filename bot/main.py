@@ -19,7 +19,7 @@ def log(message):
 
     text = message.text
 
-    messages_log.info(f"{user} \"{text}\"")
+    bot_log.info(f"{user} \"{text}\"")
 
 
 def start(update, context):
@@ -64,11 +64,11 @@ def convert_from_message(update, context):
             else:
                 answer = result
     except Exception as e:
-        answer_log.error(f"{e} [{message_text}]")
+        bot_log.error(f"{e} [{message_text}]")
         update.message.reply_text(f'Ошибка: {e}')
         help(update, context)
     else:
-        answer_log.info(f"[{message_text}] = {answer}")
+        bot_log.info(f"[{message_text}] = {answer}")
         update.message.reply_text(answer)
 
 
@@ -94,7 +94,6 @@ def main():
 if __name__ == '__main__':
     from logger import get_logger
 
-    answer_log = get_logger("log/bot/answers.log", "bot")
-    messages_log = get_logger("log/bot/messages.log", "bot")
+    bot_log = get_logger("../log/bot.log", "bot")
 
     main()

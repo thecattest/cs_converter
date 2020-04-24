@@ -12,7 +12,7 @@ def to_tenth(n, base):
                 raise ValueError('СИ не соответсвует числу')
         else:
             point = int(point)
-        if point > base:
+        if point >= base:
             raise ValueError('СИ не соответсвует числу')
         res += point * (base ** exponent)
         exponent += 1
@@ -39,8 +39,6 @@ def convert(n, base, target):
         raise ValueError('СИ не может превышать 36')
     if base == 1 or target == 1:
         raise ValueError('Я не признаю унарную СИ.')
-    if base == target:
-        return n
     tenth = to_tenth(n, base)
     res = str(from_tenth(tenth, target))
     if res[0] == '0':
