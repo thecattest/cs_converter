@@ -35,3 +35,11 @@
 2020-04-24 09:50:06,734 - bot.ERROR: СИ не может превышать 36 [66 66 6]
 2020-04-24 09:50:06,845 - bot.INFO: (Ил ья None @thecattest) "66 66 6"
 2020-04-24 09:50:10,389 - bot.INFO: (Ил ья None @thecattest) "/start"
+2020-04-24 09:53:28,214 - bot.INFO: (Ил ья None @thecattest) "/start"
+2020-04-24 09:53:39,908 - bot.INFO: (Ил ья None @thecattest) "/start"
+2020-04-24 09:53:41,650 - bot.INFO: (Ил ья None @thecattest) "/help"
+2020-04-24 09:53:44,994 - bot.INFO: (Ил ья None @thecattest) "12 10 2"
+2020-04-24 09:53:44,994 - bot.INFO: [12 10 2] = 1100
+2020-04-24 21:19:56,621 - bot.INFO: (Javed Ghaznavi @Javedghaznavi) "/start"
+2020-04-24 21:20:16,504 - bot.INFO: (Javed Ghaznavi @Javedghaznavi) "/start"
+2020-04-24 21:20:20,803 - bot.INFO: (Javed Ghaznavi @Javedghaznavi) "/credits"
